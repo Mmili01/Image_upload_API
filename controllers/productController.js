@@ -6,10 +6,12 @@ const createProduct = async (req, res) => {
   console.log(req.body);
 
   const product = await Product.create(req.body);
-  res.status(StatusCodes).json({ product });
+  res.status(StatusCodes.OK).json({ product });
 };
 const getAllProduct = async (req, res) => {
-  res.send("get all product");
+const products = await Product.find({})
+  res.status(StatusCodes.OK).json({products})
+
 };
 
 module.exports = { createProduct, getAllProduct };
