@@ -4,7 +4,7 @@ const router = express.Router()
 
 const {createProduct, getAllProduct} = require('../controllers/productController')
 
-const {uploadProductImage} = require('../controllers/uploadsController')
+const {uploadProductImage,uploadProductImageLocal} = require('../controllers/uploadsController')
 
 router.route('/').post(createProduct).get(getAllProduct)
 
